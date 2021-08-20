@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Любимовка - тестовое задание
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Посмотрите на макет
+[Ссылка на макет](https://www.figma.com/file/wKl8SsVMG5YqiwK4GB3kRz/%D0%9B%D1%8E%D0%B1%D0%B8%D0%BC%D0%BE%D0%B2%D0%BA%D0%B0-%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=0%3A1)
 
-## Available Scripts
+## Что нужно сделать?
+Вам нужно сделать поисковую форму, которая ищет по названию пьесы и по автору.
+Пьесы отображаются рядом друг с другом, а авторы - сбоку, разбитые по первым буквам их фамилии.
 
-In the project directory, you can run:
+Лучше приведем пример!
 
-### `yarn start`
+### Пример:
+* вы пишите "голос" в поиске
+* есть два совпадения: пьеса с названием "голос ЮАО" и автор с фамилией "Голосовский"
+* нужно разделить результат на пьесы и авторов
+    * пьесы - отобразить в виде карточек со всей информацией про пьесу
+    * авторов - сделать алфавитный список с разбивкой по первой букве фамилии
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Требования
+* Главное требование: используйте `React`
+* Не тратьте слишком много времени
+* Подумайте о том, как можно использовать компоненты в будущем
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Откуда брать данные?
+Из файла `data.json`
+Данные выглядят так:
 
-### `yarn test`
+```javascript
+      "_id": "611e5bee6dbecd9b57cd7244",
+      "author_firstName": "Ангелина",
+      "author_lastName": "Пастернак",
+      "title": "Августина и Степан",
+      "city": "Санкт-Петербург",
+      "year": 2021
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* `_id` - уникальный id пьесы
+* `author_firstName` - имя автора
+* `author_lastName` - фамилия автора
+* `title` - название пьесы
+* `city` - город, в котором написана пьеса
+* `year` - год написания пьесы
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Как поделиться результатом?
+* Загрузите работу на приватный репозиторий в гитхабе
+* Поделитесь доступом с `chechenev`

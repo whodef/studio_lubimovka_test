@@ -1,0 +1,16 @@
+.header {
+    margin: 0;
+    padding: 0;
+}
+
+.app-title {
+    max-width: 740px;
+    height: 112px;
+    font-weight: 400;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: #242424;
+}

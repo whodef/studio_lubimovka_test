@@ -1,0 +1,42 @@
+.catalog-section {
+    margin: 0;
+    padding: 0 0 0 94px;
+    width: 240px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.catalog {
+    margin: 0 0 60px 0;
+}
+
+.catalog:last-child {
+    margin: 0;
+}
+
+.catalog__index {
+    margin: 0;
+    padding: 12px 0 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.01em;
+    color: #242424;
+}
+
+.catalog__paragraph {
+    margin: 0;
+    padding: 12px 0 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    font-feature-settings: 'ss01' on;
+    color: #242424;
+}

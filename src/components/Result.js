@@ -11,21 +11,33 @@ class Result extends React.Component {
             results: []
         }
     }
-
+// Танцы с бубном:
     render() {
         let cards = [];
+        let catalog = {};
+        let authorsIncluded = [];
 
-        this.state.results.forEach(elem => {
+        this.state.results.forEach(element => {
+            const authorFullName = `${element.author_firstName} ${element.author_lastName}`;
+
+            if (authorsIncluded.indexOf(authorFullName) < 0) {
+                // Результат по каталогу
+                authorsIncluded.push(authorFullName)
+                const firstLetter = element.author_lastName.charAt(0);
+                catalog.hasOwnProperty(firstLetter) ? catalog[firstLetter].push(element) : catalog[firstLetter] = [element];
+            }
+            // Результат по карточкам
             cards.push(
-                <Card key={elem._id} title={elem.title} author={`${elem.author_firstName} ${elem.author_lastName}`}
-                      city={elem.city} year={elem.year}/>
+                <Card key={element._id} title={element.title} author={authorFullName} city={element.city}
+                      year={element.year}
+                />
             );
-        })
+        });
 
         return (
             <main className="search-result">
                 {cards}
-                <Catalog/>
+                <Catalog data={catalog}/>
             </main>
         );
     }

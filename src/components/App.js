@@ -6,6 +6,7 @@ import Result from './Result';
 import data from '../data.json';
 
 class App extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -17,20 +18,22 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({data: data.result})
+        this.setState({
+            data: data.result
+        })
     }
 
     handleSearchBar(value) {
         let results = [];
 
         this.state.data.forEach(element => {
-
+            // Отобразить результат не более 3-х карт
             if (results.length > 2) {
                 return;
             }
-
+            // Выборка совпадений с запросом
             let matches = 0;
-
+            // Выборка по ключам заголовка и автора
             ['title', 'author_firstName', 'author_lastName'].forEach(field => {
                 matches += element[field].toLowerCase().includes(value.toLowerCase()) ? 1 : 0;
             })
@@ -38,14 +41,15 @@ class App extends React.Component {
             if (matches > 0) {
                 results.push(element);
             }
-
         });
 
-        this.resultComponent.current.setState({results: results});
-        this.headerComponent.current.setState({query: value, found: results.length > 0});
-
-        console.log(value)
-        console.log(results)
+        this.resultComponent.current.setState({
+            results: results
+        });
+        this.headerComponent.current.setState({
+            query: value,
+            found: results.length > 0
+        });
     }
 
     render() {

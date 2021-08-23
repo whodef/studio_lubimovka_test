@@ -1,36 +1,16 @@
 import './Card.css';
 
-const Card = () => {
+const Card = (props) => {
     return (
-        <>
-            <div className="card">
-                <div className="card__container">
-                    <h2 className="card__title">Август 1999 или Никита, любовь и голуби</h2>
-                </div>
-                <h3 className="card__author">Бжожовский Теодор</h3>
-                <p className="card__paragraph">Санкт-Петербург
-                    <span className="card__year">2020</span>
-                </p>
+        <div className="card">
+            <div className="card__container">
+                <h2 className="card__title">{props.title}</h2>
             </div>
-            <div className="card">
-                <div className="card__container">
-                    <h2 className="card__title">Августина и Степан</h2>
-                </div>
-                <h3 className="card__author">Пастернак Ангелина</h3>
-                <p className="card__paragraph">Санкт-Петербург
-                    <span className="card__year">2020</span>
-                </p>
-            </div>
-            <div className="card">
-                <div className="card__container">
-                    <h2 className="card__title">По ту сторону августа</h2>
-                </div>
-                <h3 className="card__author">Евдокимов Платон</h3>
-                <p className="card__paragraph">Москва
-                    <span className="card__year">2017</span>
-                </p>
-            </div>
-        </>
+            <h3 className="card__author">{props.author}</h3>
+            <p className="card__paragraph">{props.city}
+                <span className="card__year">{props.year}</span>
+            </p>
+        </div>
     );
 }
 

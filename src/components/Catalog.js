@@ -10,15 +10,20 @@ const Catalog = (props) => {
 
     let catalogs = [];
 
-    for (const [key, list] of Object.entries(props.data).sort((a, b) => b[0].localeCompare(a[0]))) {
+    for (const [key, list] of Object
+        .entries(props.data)
+        .sort((a, b) => a[0].localeCompare(b[0]))) {
+
         let paragraphs = [];
 
-        list.forEach(element => {
-            paragraphs.push(
-                <p className="catalog__paragraph"
-                   key={element._id}>{`${element.author_lastName} ${element.author_firstName}`}</p>
-            );
-        });
+        list.sort((a, b) => `${a.author_lastName} ${a.author_firstName}`
+            .localeCompare(`${b.author_lastName} ${b.author_firstName}`))
+            .forEach(element => {
+                paragraphs.push(
+                    <p className="catalog__paragraph"
+                       key={element._id}>{`${element.author_lastName} ${element.author_firstName}`}</p>
+                );
+            });
 
         catalogs.push({
             firstLetter: key,
